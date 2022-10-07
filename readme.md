@@ -53,9 +53,10 @@ benchmark suite, with the relevant downloading and preprocessing instructions
 command-line arguments for the LEAF preprocessing utility used were to generate
 the full-sized non-iid dataset, with minimum 15 samples/user, sample-based 
 80-20 train-test split were: 
-`./preprocess.sh -s niid --sf 1.0 -k 15 -t sample --tf 0.8`. The resulting set 
-of `.json` files should then be copied to `./data/femnist/`. In the experiments,
-3000 of the maximum 3500 workers were used.
+`./preprocess.sh -s niid --sf 1.0 -k 15 -t sample --tf 0.8`. The resulting training 
+`.json` files files should then be copied to `./data/femnist/train/` and the 
+testing files to `./data/femnist/test/`. In the experiments, 3000 of the maximum 
+3500 workers were used.
 
 **Sent140**: also from [LEAF](https://leaf.cmu.edu/), with the instructions 
 [here](https://github.com/TalwalkarLab/leaf/tree/master/data/sent140). The 
