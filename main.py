@@ -29,8 +29,8 @@ def setup_lr_task(dset_name, device):
     - test_data:    {tuple} (x,y) of torch.tensors on device
     """
     if dset_name == 'femnist':
-        train, test     = load_femnist( './datasets/femnist/train', 
-                                        './datasets/femnist/test', 
+        train, test     = load_femnist( './data/femnist/train', 
+                                        './data/femnist/test', 
                                         3000)
         data_feeders    = [PyTorchDataFeeder(   x, torch.float32, 
                                                 y, 'long', 
@@ -45,8 +45,8 @@ def setup_lr_task(dset_name, device):
     
     elif dset_name == 'sent140':
         train, test     = load_sent140( 
-                                './datasets/sent140/train_data_sparse.pkl',
-                                './datasets/sent140/test_data_sparse.pkl', 
+                                './data/sent140/train_data_sparse.pkl',
+                                './data/sent140/test_data_sparse.pkl', 
                                 21876)
         data_feeders    = [ PyTorchDataFeeder(  x, torch.float32, 
                                                 y, 'long', 
@@ -61,8 +61,8 @@ def setup_lr_task(dset_name, device):
 
     elif dset_name == 'shakes':
         train, test     = load_shakes(  
-                                './datasets/shakespeare/shakes_niid_train.json',
-                                './datasets/shakespeare/shakes_niid_test.json', 
+                                './data/shakespeare/shakes_niid_train.json',
+                                './data/shakespeare/shakes_niid_test.json', 
                                 660)
         data_feeders    = [ PyTorchDataFeeder(  x, 'long', 
                                                 y, 'long', 
@@ -77,8 +77,8 @@ def setup_lr_task(dset_name, device):
 
     elif dset_name == 'cifar':
         train, test     = load_cifar100(
-                                './datasets/cifar100/fed_cifar100_train.h5',
-                                './datasets/cifar100/fed_cifar100_test.h5', 
+                                './data/cifar100/fed_cifar100_train.h5',
+                                './data/cifar100/fed_cifar100_test.h5', 
                                 500)
         crop            = torchvision.transforms.RandomCrop(32, padding=4)
         flip            = torchvision.transforms.RandomHorizontalFlip(p=0.5)
